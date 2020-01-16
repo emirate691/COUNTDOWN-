@@ -1,0 +1,61 @@
+
+
+<html>
+    <head> 
+        <title>countdown</title>
+    <style>
+        p {
+            text-align: center;
+            font-size: 60px;
+            margin-top: 0px;
+            min-width:150vh;
+            min-height:100vh;
+            color:brown;
+            text-shadow:3px 2px red;
+}
+        }
+        </style>
+    </head>
+    <body>
+<p id="demo"></p>
+
+<script>
+
+const countDownDate = new Date(" DEC 31, 2020 12:00:00").getTime();
+
+const a = setInterval(function() {
+
+
+  const now = new Date().getTime();
+
+  
+  const distance = countDownDate - now;
+
+  
+  //const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+  
+  document.getElementById("demo").innerHTML =  "EXAM START <br>" + hours + "h "
+  + minutes + "m " + seconds + "s ";
+
+  
+  if (distance < 0) {
+    clearInterval(a);
+    document.getElementById("demo").innerHTML = "EXPIRED";
+  }
+}, 1000);
+</script>
+
+        
+        
+        
+        
+        
+
+
+        
+    </body>
+</html>
